@@ -1,0 +1,26 @@
+daemon off
+setup_mode off
+
+log_level 6
+log_file /home/roruck/iotcam/motion.log
+pid_file /home/roruck/iotcam/motion.pid
+
+target_dir /home/roruck/iotcam/motion_pics
+
+netcam_url http://192.168.18.24/capture
+netcam_keepalive off
+
+width 640
+height 480
+framerate 1
+
+threshold 2500
+minimum_motion_frames 3
+event_gap 10
+pre_capture 0
+post_capture 0
+
+picture_output off
+movie_output off
+
+on_motion_detected /home/roruck/iotcam/capture_event_frame.sh
